@@ -20,6 +20,7 @@ menuimage = tk.Label(root,image = menu)
 #This is to actually show the image
 menuimage.pack()
 
+
 canvas1 = tk.Canvas(root, width=50, height=50)
 play_button = tk.Button(text = "Start the Test")
 play_button.configure(width=50)
