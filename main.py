@@ -2,14 +2,23 @@ import tkinter as tk
 import buttonresponses
 from PIL import ImageTk, Image
 
+quizindicator = 0
+#This function is the function that begins the quiz.
+#This is the main window - you can see the tk window tab at the top
+menuwindow = tk.Tk()
+menuwindow.geometry("835x635")
+
+#Asks the user if they are ready to begin the quiz, this code will stay looping here until they type YES, then it will move on.
+# yeslist = ["YES", "YEs", "Yes", "yes", "yeS", "yES"]
+# while quizindicator == 0:
+#   askbegin = input("If you are ready to begin the quiz, type yes. \n")
+#   if askbegin.lower() == "yes":
+#     quizindicator = 1
+
 #TEMPLATE CODE
 #<------------------------>
 
 #<------------------------>
-
-#This is the main window - you can see the tk window tab at the top
-menuwindow = tk.Tk()
-menuwindow.geometry("835x635")
 
 #These are canvases, these are where the information of each page will sit depending on which one.
 #Under this is all the image screen canvases
@@ -109,7 +118,7 @@ infopage_img = ImageTk.PhotoImage(
 begin_button.place(x=287, y=350)
 #<------------------------>
 
-print("Running")
+
 #QUESTION 1 CODE
 #<------------------------>
 
@@ -131,3 +140,5 @@ sncbtn = tk.Button(text="Safe and Cautious", command=buttonresponses.snc)
 #<------------------------>
 
 #<------------------------>
+print("The Quiz has Begun, a GUI should show up!")
+print(quizindicator)
