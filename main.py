@@ -90,7 +90,7 @@ def questioncheck():
         if questionnumber == 10:
             tenthques()
         if questionnumber == 11:
-            tenthques()
+            eleventhques()
 
 def disclaimer():
     begin_button.destroy()
@@ -193,13 +193,19 @@ def fifthques():
     stingspecbtn.place(x=510, y=175)
     aresodinbtn.place(x=5, y=425)
     buckjudbtn.place(x=510, y=425)
+    backbtn.place(x=320, y=560)
 
 #<------------------------>
 #QUESTION 6 FUNCTIONS
 #<------------------------>
 def sixthques():
   menuplatform.create_image(415, 315, image=sixthques_img)
-
+  hideq6()
+  hiderbtn.place(x=5, y=125)
+  holderbtn.place(x=450, y=125)
+  stealthbtn.place(x=5, y=375)
+  plannerbtn.place(x=450, y=375)
+  backbtn.place(x=320, y=325)
 
   
 #<------------------------>
@@ -207,7 +213,10 @@ def sixthques():
 #<------------------------>
 def seventhques():
   menuplatform.create_image(415, 315, image=seventhques_img)
-
+  hideq7()
+  abilitybothbtn.place(x=100, y=175)
+  gunplaybothbtn.place(x=100, y=375)
+  backbtn.place(x=320, y=560)
 
   
 #<------------------------>
@@ -215,7 +224,10 @@ def seventhques():
 #<------------------------>
 def eighthques():
   menuplatform.create_image(415, 315, image=eighthques_img)
-
+  hideq8()
+  intelbtn.place(x=75, y=175)
+  firepowerbtn.place(x=425, y=175)
+  controlbtn.place(x=250, y=375)
 
   
 #<------------------------>
@@ -223,23 +235,30 @@ def eighthques():
 #<------------------------>
 def ninthques():
   menuplatform.create_image(415, 315, image=ninthques_img)
-
+  hideq9()
+  srangebtn.place(x=25, y=175)
+  mrangebtn.place(x=435, y=175)
+  lrangebtn.place(x=225, y=375)
 
   
 #<------------------------>
-#QUESTION 9 FUNCTIONS
+#QUESTION 10 FUNCTIONS
 #<------------------------>
 def tenthques():
   menuplatform.create_image(415, 315, image=tenthques_img)
-
+  hideq10()
+  overwatchbtn.place(x=20, y=375)
+  csgobtn.place(x=465, y=150)
 
   
 #<------------------------>  
-#QUESTION 9 FUNCTIONS
+#QUESTION 11 FUNCTIONS
 #<------------------------>
 def eleventhques():
+  hideq11()
   menuplatform.create_image(415, 315, image=eleventhques_img)
-
+  strategiesbtn.place(x=250, y=175)
+  adaptingbtn.place(x=250, y=375)
 
   
 #<------------------------> 
@@ -384,40 +403,55 @@ gunplaybothbtn = tk.Button(image= gunplaybothimg, command=choice2)
 #<------------------------>
 eighthques_img = ImageTk.PhotoImage(
     file="imagescreens/questionimages/question8.png")
-
-
-
-
-
+#ANSWER 1 "Intel"
+intelimg = ImageTk.PhotoImage(Image.open("buttonimages/question8/intel.png"))
+intelbtn = tk.Button(image= intelimg, command=choice1)
+#ANSWER 2 "Firepower"
+firepowerimg = ImageTk.PhotoImage(Image.open("buttonimages/question8/firepower.png"))
+firepowerbtn = tk.Button(image= firepowerimg, command=choice2)
+#ANSWER 3 "Control"
+controlimg = ImageTk.PhotoImage(Image.open("buttonimages/question8/control.png"))
+controlbtn = tk.Button(image= controlimg, command=choice3)
 #<------------------------>
+
 #NINTH QUESTION CODE
 #<------------------------>
 ninthques_img = ImageTk.PhotoImage(
     file="imagescreens/questionimages/question9.png")
-
-
-
-
+#ANSWER 1 "Short Range"
+srangeimg = ImageTk.PhotoImage(Image.open("buttonimages/question9/srange.png"))
+srangebtn = tk.Button(image= srangeimg, command=choice1)
+#ANSWER 2 "Mid Range"
+mrangeimg = ImageTk.PhotoImage(Image.open("buttonimages/question9/mrange.png"))
+mrangebtn = tk.Button(image= mrangeimg, command=choice2)
+#ANSWER 3 "Long Range"
+lrangeimg = ImageTk.PhotoImage(Image.open("buttonimages/question9/lrange.png"))
+lrangebtn = tk.Button(image= lrangeimg, command=choice2)
 
 #<------------------------>
 #TENTH QUESTION CODE
 #<------------------------>
 tenthques_img = ImageTk.PhotoImage(
     file="imagescreens/questionimages/question10.png")
+#ANSWER 1 "Overwatch"
+overwatchimg = ImageTk.PhotoImage(Image.open("buttonimages/question10/overwatch.png"))
+overwatchbtn = tk.Button(image= overwatchimg, command=choice1)
+#ANSWER 2 "CS:GO"
+csgoimg = ImageTk.PhotoImage(Image.open("buttonimages/question10/csgo.png"))
+csgobtn = tk.Button(image= csgoimg, command=choice2)
+#<---------------------->
 
 
-
-
-#<------------------------>
 #ELEVENTH QUESTION CODE
 #<------------------------>
 eleventhques_img = ImageTk.PhotoImage(
     file="imagescreens/questionimages/question11.png")
-
-
-
-
-
+#ANSWER 1 "Strategies"
+strategiesimg = ImageTk.PhotoImage(Image.open("buttonimages/question11/strategies.png"))
+strategiesbtn = tk.Button(image= strategiesimg, command=choice1)
+#ANSWER 2 "Adapting"
+adaptingimg = ImageTk.PhotoImage(Image.open("buttonimages/question11/adapting.png"))
+adaptingbtn = tk.Button(image= adaptingimg, command=choice2)
 #<------------------------>
 
 
@@ -505,11 +539,56 @@ def hideq4():
 def hideq5():
     attackbtn.place(x=11100, y=175)
     defendbtn.place(x=11100, y=375)
-# def hideq6():
-# def hideq7():
-# def hideq8():
-# def hideq9():
-# def hideq10():
-
+    hiderbtn.place(x=1115, y=125)
+    holderbtn.place(x=111450, y=125)
+    stealthbtn.place(x=1115, y=375)
+    plannerbtn.place(x=11450, y=375)
+def hideq6():
+    marshopbtn.place(x=1115, y=175)
+    stingspecbtn.place(x=11510, y=175)
+    aresodinbtn.place(x=1115, y=425)
+    buckjudbtn.place(x=11510, y=425)
+    hiderbtn.place(x=1115, y=125)
+    holderbtn.place(x=111450, y=125)
+    stealthbtn.place(x=1115, y=375)
+    plannerbtn.place(x=11450, y=375)
+    abilitybothbtn.place(x=11100, y=175)
+    gunplaybothbtn.place(x=11100, y=375)
+def hideq7():
+    hiderbtn.place(x=1115, y=125)
+    holderbtn.place(x=111450, y=125)
+    stealthbtn.place(x=1115, y=375)
+    plannerbtn.place(x=11450, y=375)
+    abilitybothbtn.place(x=11100, y=175)
+    gunplaybothbtn.place(x=11100, y=375)
+    intelbtn.place(x=111175, y=175)
+    firepowerbtn.place(x=111425, y=175)
+    controlbtn.place(x=111250, y=375)
+def hideq8():
+    abilitybothbtn.place(x=11100, y=175)
+    gunplaybothbtn.place(x=11100, y=375)
+    srangebtn.place(x=1115, y=175)
+    mrangebtn.place(x=111510, y=175)
+    lrangebtn.place(x=11510, y=175)
+    intelbtn.place(x=11175, y=175)
+    firepowerbtn.place(x=11425, y=175)
+    controlbtn.place(x=111250, y=375)
+def hideq9():  
+    intelbtn.place(x=1115, y=175)
+    firepowerbtn.place(x=111510, y=175)
+    controlbtn.place(x=111510, y=425)
+    overwatchbtn.place(x=111510, y=175) 
+    csgobtn.place(x=111510, y=425)
+def hideq10():
+    srangebtn.place(x=1115, y=175)
+    mrangebtn.place(x=111510, y=175)
+    lrangebtn.place(x=11510, y=175)
+    overwatchbtn.place(x=111510, y=175) 
+    csgobtn.place(x=111510, y=425)
+    strategiesbtn.place(x=11100, y=175)
+    adaptingbtn.place(x=11100, y=375)
+def hideq11():
+    overwatchbtn.place(x=11120, y=375)
+    csgobtn.place(x=111465, y=150)
 print("The Quiz has Begun, a GUI should show up!")
 print(questionnumber)
