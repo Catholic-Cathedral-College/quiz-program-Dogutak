@@ -451,7 +451,7 @@ strategiesimg = ImageTk.PhotoImage(Image.open("buttonimages/question11/strategie
 strategiesbtn = tk.Button(image= strategiesimg, command=choice1)
 #ANSWER 2 "Adapting"
 adaptingimg = ImageTk.PhotoImage(Image.open("buttonimages/question11/adapting.png"))
-adaptingbtn = tk.Button(image= adaptingimg, command=choice2)
+adaptingbtn = tk.Button(image= adaptingimg, command=choice4)
 #<------------------------>
 
 
