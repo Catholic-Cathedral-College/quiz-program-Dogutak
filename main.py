@@ -5,6 +5,7 @@ from PIL import ImageTk, Image
 questionnumber = 0
 agentscore = 0
 
+
 #These are the scores for all the general questions
 choice1 = 1
 choice2 = 2
@@ -15,7 +16,7 @@ choice4 = 4
 #This is the main window - you can see the tk window tab at the top
 menuwindow = tk.Tk()
 menuwindow.geometry("835x635")
-
+menuwindow.overrideredirect(1)
 #TEMPLATE CODE
 #<------------------------>
 
@@ -27,13 +28,13 @@ menuwindow.geometry("835x635")
 #This is the menu screen canvas
 menuplatform = tk.Canvas(menuwindow, width=835, height=635)
 #This is the info page canvas
-infopageplatform = tk.Canvas(menuwindow, width=835, height=635)
+infopageplatform = tk.Canvas(menuwindow, width=835)
 #<---------->
 
-#Under this is all the button canvases
+
 #<---------->
 #This is the BEGIN button canvas
-beginbuttonplatform = tk.Canvas(menuwindow, width=50, height=50)
+beginbuttonplatform = tk.Canvas(menuwindow, highlightthickness=0)
 
 #<---------->
 
@@ -91,6 +92,8 @@ def questioncheck():
             tenthques()
         if questionnumber == 11:
             eleventhques()
+        if questionnumber == 12:
+            confirmation()
 
 def disclaimer():
     begin_button.destroy()
@@ -263,15 +266,14 @@ def eleventhques():
   
 #<------------------------> 
 
-
-
-  
+#THIS IS THE FINAL AGENT RESULTS - THESE ARE WHAT AGENT YOU WILL RECEIVE IN THE QUIZ.
 def closequiz():
     menuwindow.destroy()
 
 
 #<------------------------>
 
+  
 #FIRST QUESTION CODE
 #<------------------------>
 #BUTTON CODE
@@ -456,6 +458,104 @@ adaptingbtn = tk.Button(image= adaptingimg, command=choice4)
 
 
 
+#THIS IS THE FINAL AGENT RESULT FUNCTION
+#THIS IS THE CONFIRMATION PAGE, WHERE IT WILL ASK YOU IF YOU ARE READY TO PROCEED WITH RESULTS.
+def confirmation():
+  hideconfirm()
+  menuplatform.create_image(415, 315, image=confirmationimg)
+  confirmationbtn.place(x=125, y=380)
+#AGENT SCORE RESULTS
+def agentselect():
+  final()
+  retakequizbtn.place(x=125, y=420)
+  for score in range(agentscore):
+    if score == 11:
+      menuplatform.create_image(415, 315, image=astraimg)
+    if score == 12:
+      menuplatform.create_image(415, 315, image=cypherimg)
+    if score == 13:
+      menuplatform.create_image(415, 315, image=omenimg)
+    if score == 14:
+      menuplatform.create_image(415, 315, image=breachimg)
+    if score == 15:
+      menuplatform.create_image(415, 315, image=sageimg)
+    if score == 16:
+      menuplatform.create_image(415, 315, image=killjoyimg)
+    if score == 17:
+      menuplatform.create_image(415, 315, image=omenimg)
+    if score == 18:
+      menuplatform.create_image(415, 315, image=brimstoneimg)
+    if score == 19:
+      menuplatform.create_image(415, 315, image=cypherimg)
+    if score == 20:
+      menuplatform.create_image(415, 315, image=neonimg)
+    if score == 21:
+      menuplatform.create_image(415, 315, image=sovaimg)
+    if score == 22:
+      menuplatform.create_image(415, 315, image=neonimg)
+    if score == 23:
+      menuplatform.create_image(415, 315, image=fadeimg)
+    if score == 24:
+      menuplatform.create_image(415, 315, image=skyeimg)
+    if score == 25:
+      menuplatform.create_image(415, 315, image=chamberimg)
+    if score == 26:
+      menuplatform.create_image(415, 315, image=jettimg)
+    if score == 27:
+      menuplatform.create_image(415, 315, image=neonimg)
+    if score == 28:
+      menuplatform.create_image(415, 315, image=phoeniximg)
+    if score == 29:
+      menuplatform.create_image(415, 315, image=reynaimg)
+    if score == 30:
+      menuplatform.create_image(415, 315, image=neonimg)
+    if score == 31:
+      menuplatform.create_image(415, 315, image=skyeimg)
+    if score == 32:
+      menuplatform.create_image(415, 315, image=viperimg)
+    if score == 33:
+      menuplatform.create_image(415, 315, image=yoruimg)
+    if score == 34:
+      menuplatform.create_image(415, 315, image=razeimg)
+    if score == 35:
+      menuplatform.create_image(415, 315, image=astraimg)
+    if score == 36:
+      menuplatform.create_image(415, 315, image=kayoimg)
+#CONFIRMATION CODE
+  #THIS IS THE IMAGE DIRECTORIES AND BUTTON CODE FOR THE CONFIRMATION PAGE AND IT'S BUTTON
+confirmationimg = ImageTk.PhotoImage(Image.open("imagescreens/final result image/CONFIRMATION.png"))
+confirmationbtnimg = ImageTk.PhotoImage(Image.open("imagescreens/final result image/CONFIRMATION BUTTON.png"))
+confirmationbtn = tk.Button(image=confirmationbtnimg, command=agentselect)
+#ALL AGENT RESULT FILE DIRECTORIES
+#<------------------------>
+astraimg = ImageTk.PhotoImage(Image.open("agent results/ASTRA result.png"))
+breachimg = ImageTk.PhotoImage(Image.open("agent results/BREACH result.png"))
+brimstoneimg = ImageTk.PhotoImage(Image.open("agent results/BRIMSTONE result.png"))
+chamberimg = ImageTk.PhotoImage(Image.open("agent results/CHAMBER result.png"))
+cypherimg = ImageTk.PhotoImage(Image.open("agent results/CYPHER result.png"))
+fadeimg = ImageTk.PhotoImage(Image.open("agent results/FADE result.png"))
+jettimg = ImageTk.PhotoImage(Image.open("agent results/JETT result.png"))
+kayoimg = ImageTk.PhotoImage(Image.open("agent results/KAYO result.png"))
+killjoyimg = ImageTk.PhotoImage(Image.open("agent results/KILLJOY result.png"))
+neonimg = ImageTk.PhotoImage(Image.open("agent results/NEON result.png"))
+omenimg = ImageTk.PhotoImage(Image.open("agent results/OMEN result.png"))
+phoeniximg = ImageTk.PhotoImage(Image.open("agent results/PHOENIX result.png"))
+razeimg = ImageTk.PhotoImage(Image.open("agent results/RAZE result.png"))
+reynaimg = ImageTk.PhotoImage(Image.open("agent results/REYNA result.png"))
+sageimg = ImageTk.PhotoImage(Image.open("agent results/SAGE result.png"))
+skyeimg = ImageTk.PhotoImage(Image.open("agent results/SKYE result.png"))
+sovaimg = ImageTk.PhotoImage(Image.open("agent results/SOVA result.png"))
+viperimg = ImageTk.PhotoImage(Image.open("agent results/VIPER result.png"))
+yoruimg = ImageTk.PhotoImage(Image.open("agent results/YORU result.png"))
+#<------------------------>
+#This restarts the quiz
+def restart():
+  global questionnumber
+  questionnumber = 1
+  questioncheck()
+retakequizimg = ImageTk.PhotoImage(Image.open("buttonimages/overall/retake.png"))
+retakequizbtn = tk.Button(image=retakequizimg, command=restart)
+
 #MENU SCREEN IMAGE CODE
 #<--------------------->
 valorant_img = ImageTk.PhotoImage(
@@ -508,8 +608,12 @@ backbtnimg = ImageTk.PhotoImage(
 backbtn = tk.Button(image=backbtnimg, command=prevques)
 #<-------------------->
 
+#
+
 #ALL THESE FUNCTIONS HIDE ALL THE BUTTONS DEPENDING ON WHICH QUESTION
 def hideq1():
+    confirmationbtn.place(x=111125, y=400)
+    retakequizbtn.place(x=111125, y=380)
     newbtn.place(x=1115, y=175)
     okbtn.place(x=11457, y=175)
     decentbtn.place(x=1115, y=425)
@@ -590,5 +694,12 @@ def hideq10():
 def hideq11():
     overwatchbtn.place(x=11120, y=375)
     csgobtn.place(x=111465, y=150)
+    confirmationbtn.place(x=111125, y=380)
+def hideconfirm():
+    strategiesbtn.place(x=21150, y=175)
+    adaptingbtn.place(x=11250, y=375)
+def final():
+    backbtn.place(x=11320, y=560)
+    confirmationbtn.place(x=111125, y=380)
 print("The Quiz has Begun, a GUI should show up!")
 print(questionnumber)
